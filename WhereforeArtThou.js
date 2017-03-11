@@ -5,9 +5,10 @@ function whatIsInAName(collection, source) {
 	console.log("Key is: ", key);
 	// Only change code below this line
 	for (var i = 0; i < collection.length; i++) {
-		console.log("object is", collection[i]);
 		if (key in collection[i]) {
-			console.log(collection[i][key]);
+			if (collection[i][key]) {
+				arr.push(collection[i]);
+			}
 		}
 	}
 
