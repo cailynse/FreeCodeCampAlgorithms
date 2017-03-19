@@ -15,14 +15,14 @@ function translatePigLatin(str) {
 	if (checkVowel(chars[0])) {
 		newStr = str + "way";
 
-	} else if (!checkVowel(chars[0]) && !checkVowel(chars[1]) {
-			newStr = str.substr(str[2]);
-			newStr = newStr + chars[0] + chars[1] + "ay";
-		} else {
-			newStr = str.substr(str[1]);
-			newStr = newStr + chars[0] + "ay";
-		}
-		return newStr;
+	} else if (!checkVowel(chars[0]) && !checkVowel(chars[1])) {
+		newStr = str.substr(2);
+		newStr = newStr + chars[0] + chars[1] + "ay";
+	} else {
+		newStr = str.substr(1);
+		newStr = newStr + chars[0] + "ay";
 	}
+	return newStr;
+}
 
-	translatePigLatin("consonant");
+translatePigLatin("consonant");
