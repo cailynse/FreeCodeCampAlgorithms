@@ -1,6 +1,7 @@
 function translatePigLatin(str) {
 	var newStr = str,
-		chars = str.split("");
+		chars = str.split(""),
+		newStr;
 
 	function checkVowel(char) {
 		var vowels = ["a", "e", "i", "o", "u"];
@@ -11,7 +12,17 @@ function translatePigLatin(str) {
 		}
 		return false;
 	}
-	return str;
-}
+	if (checkVowel(chars[0])) {
+		newStr = str + "way";
 
-translatePigLatin("consonant");
+	} else if (!checkVowel(chars[0]) && !checkVowel(chars[1]) {
+			newStr = str.substr(str[2]);
+			newStr = newStr + chars[0] + chars[1] + "ay";
+		} else {
+			newStr = str.substr(str[1]);
+			newStr = newStr + chars[0] + "ay";
+		}
+		return newStr;
+	}
+
+	translatePigLatin("consonant");
