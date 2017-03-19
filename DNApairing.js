@@ -1,19 +1,25 @@
 function pairElement(str) {
+<<<<<<< Updated upstream
+	return str;
+=======
 
 	var pairs = {
 			G: "C",
-			C: "C",
+			C: "G",
 			A: "T",
 			T: "A"
 		},
-		newStr;
+		chars = str.split(""),
+		pair = [],
+		newStr = [];
 
-	for (var i = 0; i < str.length; i++) {
-		newStr.push(str[i]);
-		newStr.push(pairs[str[i]]);
+	for (var i = 0; i < chars.length; i++) {
+		pair = [chars[i], pairs[chars[i]]];
+		newStr.push(pair);
 	}
 
 	return newStr;
+>>>>>>> Stashed changes
 
 }
 
