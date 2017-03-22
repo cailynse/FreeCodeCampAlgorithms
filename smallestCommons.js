@@ -1,31 +1,35 @@
 function smallestCommons(arr) {
-	var sortedArr = arr,
-		numsBetween = [];
+    var sortedArr = arr,
+        numsBetween = [],
+        leastCommon;
 
-	function compare(a, b) {
-		return a - b;
-	}
-	sortedArr.sort(compare);
+    function compare(a, b) {
+        return b - a;
+    }
+    sortedArr.sort(compare);
 
-	for (var i = arr[0]; i <= arr[1]; i++) {
-		numsBetween.push(i);
-	}
+    for (var i = arr[0]; i >= arr[1]; i--) {
+        numsBetween.push(i);
+    }
 
-	console.log(numsBetween);
+    console.log(numsBetween);
 
-	// Euclid's Algorithm 
+    // Euclid's Algorithm 
+    function gcd(a, b) {
+        if (!b) {
+            return a;
+        } else {
+            return gcd(b, a % b);
+        }
+    }
 
-	var gcd = function (a, b) {
-		if (!b) {
-			return a;
-		}
+    leastCommon = numsBetween.reduce(function (value, currValue) {
+        var currGCD = gcd(value, currValue);
+        return (value * currValue) / currGCD;
+    });
 
-		return gcd(b, a % b);
-	};
-	console.log(gcd(462, 910));
+    return leastCommon;
 
-
-	return arr;
 }
 
 
